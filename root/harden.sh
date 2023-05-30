@@ -3,7 +3,7 @@
 rm -fr /var/spool/cron && rm -fr /etc/crontabs && rm -fr /etc/periodic
 
 # Remove all but a handful of admin commands.
-find /sbin /usr/sbin ! -type d -a ! -name nologin,chmod,nginx,groupmod,usermod -delete
+find /sbin /usr/sbin ! -type d -a ! \( -name nologin -o -name chmod -o -name nginx -o -name groupmod -o -name usermod \) -delete
 
 # Remove world-writable permissions.
 # This no longer breaks apps that need to write to /tmp,
