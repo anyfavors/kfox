@@ -1,0 +1,14 @@
+{
+  "policies":{
+    "DisableTelemetry":true,
+    "Bookmarks":[
+      {
+        "Title":"Linuxconfig.org",
+        "URL":"https://linuxconfig.org",
+        "Favicon":"https://linuxconfig.org/favicon.ico",
+        "Placement":"toolbar",
+        "Folder":"Linux"
+      }
+    ]
+  }
+}
