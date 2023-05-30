@@ -1,6 +1,16 @@
 {
   "policies":{
     "DisableTelemetry":true,
+    "DisableFirefoxAccounts":false,
+    "DisableFirefoxStudies":true,
+    "DisableAppUpdate":true,
+    "DisableFeedbackCommands":true,
+    "DisableFirefoxScreenshots":true,
+    "DisablePocket":true,
+    "OverrideFirstRunPage": "",
+    "SanitizeOnShutdown": true,
+    "SearchSuggestEnabled":false,
+    "CaptivePortal":false,
     "Bookmarks":[
       {
         "Title":"Linuxconfig.org",
