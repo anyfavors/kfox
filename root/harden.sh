@@ -43,4 +43,27 @@ sed -i -r '/^abc:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 # Remove all suid files.
 #find $sysdirs -xdev -type f -a -perm +4000 -delete
 
+# Remove init scripts since we do not use them.
+rm -rf /etc/init.d
+rm -rf /lib/rc
+rm -rf /etc/conf.d
+rm -rf /etc/inittab
+rm -rf /etc/runlevels
+rm -rf /etc/rc.conf
+
+# Remove kernel tunables since we do not need them.
+rm -rf /etc/sysctl*
+rm -rf /etc/modprobe.d
+rm -rf /etc/modules
+rm -rf /etc/mdev.conf
+rm -rf /etc/acpi
+
+# Remove root homedir since we do not need it.
+rm -fr /root
+
+# Remove fstab since we do not need it.
+rm -f /etc/fstab
+
+# Remove broken symlinks (because we removed the targets above).
+#find $sysdirs -xdev -type l -exec test ! -e {} \; -delete
 
