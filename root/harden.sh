@@ -8,15 +8,15 @@ find /sbin /usr/sbin ! -type d -a ! \( -name nologin -o -name chmod -o -name ngi
 # Remove world-writable permissions.
 # This no longer breaks apps that need to write to /tmp,
 # such as ssh-agent.
-find / -xdev -type d -perm +0002 ! -name tmp -exec chmod o-w {} + && find / -xdev -type f -perm +0002 ! -name tmp -exec chmod o-w {} +
+#find / -xdev -type d -perm +0002 ! -name tmp -exec chmod o-w {} + && find / -xdev -type f -perm +0002 ! -name tmp -exec chmod o-w {} +
 
 
 # Remove unnecessary user accounts.
-sed -i -r '/^(kasm-user|root|dockremap|messagebus|nginx|abc)/!d' /etc/group
-sed -i -r '/^(kasm-user|root|dockremap|messagebus|nginx|abc)/!d' /etc/passwd
+#sed -i -r '/^(kasm-user|root|dockremap|messagebus|nginx|abc)/!d' /etc/group
+#sed -i -r '/^(kasm-user|root|dockremap|messagebus|nginx|abc)/!d' /etc/passwd
 
 # Remove interactive login shell for everybody but user.
-sed -i -r '/^abc:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
+#sed -i -r '/^abc:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 
 #sysdirs="
 #  /bin
