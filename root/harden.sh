@@ -28,3 +28,9 @@ sysdirs="
 
 # Remove apk configs.
 find $sysdirs -xdev -regex '.*apk.*' -exec rm -fr {} +
+
+# Remove crufty...
+#   /etc/shadow-
+#   /etc/passwd-
+#   /etc/group-
+find $sysdirs -xdev -type f -regex '.*-$' -exec rm -f {} +
