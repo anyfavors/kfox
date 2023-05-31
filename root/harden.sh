@@ -36,11 +36,11 @@ find $sysdirs -xdev -regex '.*apk.*' -exec rm -fr {} +
 find $sysdirs -xdev -type f -regex '.*-$' -exec rm -f {} +
 
 # Ensure system dirs are owned by root and not writable by anybody else.
-find $sysdirs -xdev -type d \
-  -exec chown root:root {} \; \
-  -exec chmod 0755 {} \;
+#find $sysdirs -xdev -type d \
+#  -exec chown root:root {} \; \
+#  -exec chmod 0755 {} \;
 
 # Remove all suid files.
-find $sysdirs -xdev -type f -a -perm +4000 -delete
+#find $sysdirs -xdev -type f -a -perm +4000 -delete
 
 
