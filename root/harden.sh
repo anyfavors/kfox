@@ -33,7 +33,7 @@ find $sysdirs -xdev -regex '.*apk.*' -exec rm -fr {} +
 #   /etc/shadow-
 #   /etc/passwd-
 #   /etc/group-
-find $sysdirs -xdev -type f -regex '.*-$' -exec rm -f {} +
+#find $sysdirs -xdev -type f -regex '.*-$' -exec rm -f {} +
 
 # Ensure system dirs are owned by root and not writable by anybody else.
 #find $sysdirs -xdev -type d \
