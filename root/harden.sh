@@ -39,3 +39,17 @@ find $sysdirs -xdev -type f -regex '.*-$' -exec rm -f {} +
 find $sysdirs -xdev -type d \
   -exec chown root:root {} \; \
   -exec chmod 0755 {} \;
+
+# Remove all suid files.
+find $sysdirs -xdev -type f -a -perm +4000 -delete
+
+# Remove other programs that could be dangerous.
+find $sysdirs -xdev \( \
+  -name hexdump -o \
+  -name chgrp -o \
+  -name chown -o \
+  -name ln -o \
+  -name od -o \
+  -name strings -o \
+  -name su \
+  \) -delete
