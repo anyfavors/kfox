@@ -18,16 +18,16 @@ sed -i -r '/^(kasm-user|root|dockremap|messagebus|nginx|abc)/!d' /etc/passwd
 # Remove interactive login shell for everybody but user.
 sed -i -r '/^abc:/! s#^(.*):[^:]*$#\1:/sbin/nologin#' /etc/passwd
 
-sysdirs="
-  /bin
-  /etc
-  /lib
-  /sbin
-  /usr
-"
+#sysdirs="
+#  /bin
+#  /etc
+#  /lib
+#  /sbin
+#  /usr
+#"
 
 # Remove apk configs.
-find $sysdirs -xdev -regex '.*apk.*' -exec rm -fr {} +
+#find $sysdirs -xdev -regex '.*apk.*' -exec rm -fr {} +
 
 # Remove crufty...
 #   /etc/shadow-
