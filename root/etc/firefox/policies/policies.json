@@ -11,6 +11,8 @@
     "SanitizeOnShutdown": true,
     "SearchSuggestEnabled":false,
     "CaptivePortal":false,
+    "PasswordManagerEnabled":false,
+    "PrimaryPassword":false,
     "Bookmarks":[
       {
         "Title":"Linuxconfig.org",
