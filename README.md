@@ -2,3 +2,4 @@
 https://github.com/linuxserver/docker-baseimage-kasmvnc
 
 #firefox
+#hardened
