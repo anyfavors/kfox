@@ -1,5 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
-RUN apt-get update && apt-get install libgtk-3-0
+RUN apt-get update && apt-get -y install libgtk-3-0
     
 COPY /root /
 
