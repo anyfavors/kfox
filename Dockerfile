@@ -8,7 +8,7 @@ RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin: release o=Ubuntu" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin-Priority: -1" >> /etc/apt/preferences.d/99mozillateamppa
 
-RUN  apt-get update && apt-get install -y apt-transport-https
+RUN  apt-get update && apt-get install -y apt-transport-https wget
 
 RUN echo "deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" >> /etc/apt/sources.list.d/tor.list
 RUN echo "deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" >> /etc/apt/sources.list.d/tor.list
