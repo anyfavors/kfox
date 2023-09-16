@@ -1,6 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 
-RUN snap remove --purge firefox
 RUN sudo apt -y remove --autoremove firefox
 RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin: release o=LP-PPA-mozillateam" >> /etc/apt/preferences.d/99mozillateamppa
