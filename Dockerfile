@@ -1,5 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine318
-RUN apk add --no-cache firefox
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
+RUN apt-get install firefox
+
 COPY /root /
 
 RUN chmod o+x ./harden.sh \
