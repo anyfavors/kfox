@@ -8,7 +8,7 @@ RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin: release o=Ubuntu" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin-Priority: -1" >> /etc/apt/preferences.d/99mozillateamppa
 
-RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt -y install -t 'o=LP-PPA-mozillateam' firefox libevent-dev
+RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt -y install -t 'o=LP-PPA-mozillateam' firefox libevent-dev libssl-dev
 
 COPY /root /
 
