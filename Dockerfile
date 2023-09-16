@@ -1,5 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
-RUN apt-get update && apt-get -y install firefox
+RUN apt-get update && apt-get -y install apt-transport-https
 
 COPY /root /
 
