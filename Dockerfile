@@ -1,5 +1,16 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
-RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt-get -y install firefox
+
+RUN snap remove --purge firefox
+RUN sudo apt -y remove --autoremove firefox
+RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "Pin: release o=LP-PPA-mozillateam" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "Pin-Priority: 501" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "Pin: release o=Ubuntu" >> /etc/apt/preferences.d/99mozillateamppa
+RUN echo "Pin-Priority: -1" >> /etc/apt/preferences.d/99mozillateamppa
+
+RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt -y install -t 'o=LP-PPA-mozillateam' firefox
 
 COPY /root /
 
