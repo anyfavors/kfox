@@ -8,7 +8,12 @@ RUN echo "Package: firefox*" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin: release o=Ubuntu" >> /etc/apt/preferences.d/99mozillateamppa
 RUN echo "Pin-Priority: -1" >> /etc/apt/preferences.d/99mozillateamppa
 
-RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt -y install -t 'o=LP-PPA-mozillateam' firefox libevent-dev libssl-dev
+RUN echo "deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" >> /etc/apt/sources.list.d/tor.list
+RUN echo "deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" >> /etc/apt/sources.list.d/tor.list
+
+RUN wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
+
+RUN sudo add-apt-repository -y ppa:mozillateam/ppa && apt-get update && apt -y install -t 'o=LP-PPA-mozillateam' firefox libevent-dev libssl-dev apt-transport-https tor deb.torproject.org-keyring
 
 COPY /root /
 
