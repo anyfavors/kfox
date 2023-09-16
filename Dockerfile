@@ -20,7 +20,7 @@ RUN curl -L -o /tmp/xz-5.2.5.tar.gz https://github.com/therootcompany/xz-static/
     && tar xvf /tmp/xz-5.2.5.tar.gz \
     &&  mv ./xz-*/*xz /usr/local/bin/
 
-RUN mkdir tor && cd tor && curl https://dist.torproject.org/torbrowser/12.5.4/tor-browser-linux64-12.5.4_ALL.tar.xz --output tb.tar.xz && tar -xf tb.tar.xz && chmod 777 -R .
+#RUN mkdir tor && cd tor && curl https://dist.torproject.org/torbrowser/12.5.4/tor-browser-linux64-12.5.4_ALL.tar.xz --output tb.tar.xz && tar -xf tb.tar.xz && chmod 777 -R .
 
 
     
