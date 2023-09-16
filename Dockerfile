@@ -9,7 +9,7 @@ RUN chmod o+x ./harden.sh \
 
 RUN curl -L -o /tmp/xz-5.2.5.tar.gz https://github.com/therootcompany/xz-static/releases/download/v5.2.5/xz-5.2.5-linux-x86_64.tar.gz \
     && tar xvf /tmp/xz-5.2.5.tar.gz \
-    && sudo mv /tmp/xz-*/*xz /usr/local/bin/
+    &&  mv ./xz-*/*xz /usr/local/bin/
 
 
     
