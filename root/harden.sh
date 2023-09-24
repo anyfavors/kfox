@@ -52,7 +52,7 @@ rm -rf /etc/runlevels
 rm -rf /etc/rc.conf
 
 # Remove kernel tunables since we do not need them.
-rm -rf /etc/sysctl*
+#rm -rf /etc/sysctl*
 rm -rf /etc/modprobe.d
 rm -rf /etc/modules
 rm -rf /etc/mdev.conf
