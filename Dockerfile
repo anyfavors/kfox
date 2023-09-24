@@ -9,5 +9,5 @@ RUN chmod o+x ./harden.sh \
 
 USER abc
 
-RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-RUN flatpak --user abc install -y flathub com.brave.Browser
+RUN flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+RUN flatpak --user install -y flathub com.brave.Browser
