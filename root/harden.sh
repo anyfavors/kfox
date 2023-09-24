@@ -67,5 +67,5 @@ rm -f /etc/fstab
 # Remove broken symlinks (because we removed the targets above).
 #find $sysdirs -xdev -type l -exec test ! -e {} \; -delete
 
-chmod -R 777 /config
+#chmod -R 777 /config
 
