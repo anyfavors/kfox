@@ -1,5 +1,1 @@
-# kfox
-https://github.com/linuxserver/docker-baseimage-kasmvnc
-
-#firefox x
-#hardened ....
+Mon Mar 25 06:23:52 UTC 2024
