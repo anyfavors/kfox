@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine320
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine321
 RUN apk add --no-cache flatpak firefox
 
 COPY /root /
